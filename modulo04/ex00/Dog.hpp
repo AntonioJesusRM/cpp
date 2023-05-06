@@ -6,7 +6,7 @@
 /*   By: aruiz-mo <aruiz-mo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 10:57:45 by aruiz-mo          #+#    #+#             */
-/*   Updated: 2023/04/24 11:32:15 by aruiz-mo         ###   ########.fr       */
+/*   Updated: 2023/05/06 09:49:55 by aruiz-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class Dog:public Animal
 {
 public:
 	Dog();
-	Dog(const Dog& dog);
+	Dog(const Dog &dog);
 	~Dog();
 	void makeSound()const;
 };

@@ -6,7 +6,7 @@
 /*   By: aruiz-mo <aruiz-mo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 11:48:30 by aruiz-mo          #+#    #+#             */
-/*   Updated: 2023/04/24 12:15:49 by aruiz-mo         ###   ########.fr       */
+/*   Updated: 2023/05/06 09:56:35 by aruiz-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ public:
 	WrongAnimal();
 	WrongAnimal(const WrongAnimal& wAn);
 	WrongAnimal& operator=(const WrongAnimal& an);
-	virtual ~WrongAnimal();
+	~WrongAnimal();
 	void makeSound()const;
 	std::string getType() const;
 };

@@ -6,13 +6,13 @@
 /*   By: aruiz-mo <aruiz-mo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 10:51:01 by aruiz-mo          #+#    #+#             */
-/*   Updated: 2023/04/24 11:43:47 by aruiz-mo         ###   ########.fr       */
+/*   Updated: 2023/05/06 09:51:04 by aruiz-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
-Animal::Animal():type("Sin definir")
+Animal::Animal():type("Default")
 {
 	std::cout << "Default constructor called" << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: aruiz-mo <aruiz-mo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 17:57:06 by aruiz-mo          #+#    #+#             */
-/*   Updated: 2023/04/27 19:06:49 by aruiz-mo         ###   ########.fr       */
+/*   Updated: 2023/05/06 09:40:26 by aruiz-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ MateriaSource& MateriaSource::operator=(const MateriaSource& msrc)
 	if (&msrc != this)
 		for(int i = 0; i < 4; i++)
 			this->_materias[i] = msrc._materias[i];
+	return (*this);
 }
 
 MateriaSource::~MateriaSource()
