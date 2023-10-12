@@ -6,7 +6,7 @@
 /*   By: aruiz-mo <aruiz-mo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 13:55:57 by aruiz-mo          #+#    #+#             */
-/*   Updated: 2023/10/10 14:44:41 by aruiz-mo         ###   ########.fr       */
+/*   Updated: 2023/10/12 10:37:20 by aruiz-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Array<T>::Array(unsigned int n):len(n)
 template <typename T>
 Array<T>::~Array()
 {
-	delete [] data;
+	delete[] data;
 }
 
 template <typename T>
@@ -39,10 +39,11 @@ template <typename T>
 Array<T>	&Array<T>::operator=(const Array &src)
 {
 	this->len = src.len;
+	delete[] data;
 	data = new T[len];
 	for(unsigned int i = 0; i < len; i++)
 		data[i] = src.data[i];
-	return(*data);
+	return(*this);
 }
 
 template <typename T>

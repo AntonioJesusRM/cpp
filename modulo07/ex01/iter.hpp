@@ -6,7 +6,7 @@
 /*   By: aruiz-mo <aruiz-mo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 10:41:39 by aruiz-mo          #+#    #+#             */
-/*   Updated: 2023/10/10 11:09:39 by aruiz-mo         ###   ########.fr       */
+/*   Updated: 2023/10/12 10:47:33 by aruiz-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,12 @@ void	iter(T *array, int len, void (*f)(T &elem))
 		f(array[i]);
 }
 
+template <typename T>
+void	iter(T *array, int len, void (*f)(T const elem))
+{
+	for (int i = 0; i < len; i++)
+		f(array[i]);
+}
 
 template <typename T>
 void	printVec(T &n)
