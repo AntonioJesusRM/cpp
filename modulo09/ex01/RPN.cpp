@@ -6,7 +6,7 @@
 /*   By: aruiz-mo <aruiz-mo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 15:54:53 by aruiz-mo          #+#    #+#             */
-/*   Updated: 2023/10/14 09:06:03 by aruiz-mo         ###   ########.fr       */
+/*   Updated: 2023/10/20 11:58:18 by aruiz-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,26 +69,26 @@ RPN::RPN(std::string str)
 			switch (token[0])
 			{
 			case '+':
-				result = firstNumber + secondNumber;
+				result = static_cast<double>(firstNumber) + secondNumber;
 				if (moreArg)
 					this->numbers.push(aux);
 				this->numbers.push(result);
 				break;
 			case '-':
-				result = firstNumber - secondNumber;
+				result = static_cast<double>(firstNumber) - secondNumber;
 				if (moreArg)
 					this->numbers.push(aux);
 				this->numbers.push(result);
 				break;
 			case '*':
-				result = firstNumber * secondNumber;
+				result = static_cast<double>(firstNumber) * secondNumber;
 				if (moreArg)
 					this->numbers.push(aux);
 				this->numbers.push(result);
 				break;
 			case '/':
 				if (secondNumber != 0) {
-					result = firstNumber / secondNumber;
+					result = static_cast<double>(firstNumber) / secondNumber;
 					if (moreArg)
 						this->numbers.push(aux);
 					this->numbers.push(result);
@@ -105,5 +105,5 @@ RPN::RPN(std::string str)
 		}
     }
 	if (ctrl)
-		std::cout << result << std::endl;
+		std::cout << this->numbers.front() << std::endl;
 }

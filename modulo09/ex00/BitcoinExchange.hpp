@@ -6,7 +6,7 @@
 /*   By: aruiz-mo <aruiz-mo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 09:03:16 by aruiz-mo          #+#    #+#             */
-/*   Updated: 2023/10/13 13:26:57 by aruiz-mo         ###   ########.fr       */
+/*   Updated: 2023/10/20 08:54:43 by aruiz-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include "string"
 # include "algorithm"
 # include "map"
+# include "ctime"
 
 class BitcoinExchange
 {

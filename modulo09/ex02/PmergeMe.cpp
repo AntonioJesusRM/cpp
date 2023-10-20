@@ -6,7 +6,7 @@
 /*   By: aruiz-mo <aruiz-mo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 09:21:45 by aruiz-mo          #+#    #+#             */
-/*   Updated: 2023/10/14 11:30:08 by aruiz-mo         ###   ########.fr       */
+/*   Updated: 2023/10/20 12:06:50 by aruiz-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,9 +57,14 @@ PmergeMe::PmergeMe(std::string str)
 	}
 }
 
-void PmergeMe::PrintList()
+int PmergeMe::size()
 {
-	for (std::list<int>::const_iterator it1 = this->myList.begin(); it1 != this->myList.end(); ++it1) {
+    return (this->myVect.size());
+}
+
+void PmergeMe::NumberRep()
+{
+    for (std::list<int>::const_iterator it1 = this->myList.begin(); it1 != this->myList.end(); ++it1) {
         std::list<int>::const_iterator it2 = it1;
         ++it2;
         for (; it2 != this->myList.end(); ++it2) {
@@ -68,6 +73,10 @@ void PmergeMe::PrintList()
             }
         }
     }
+}
+
+void PmergeMe::PrintList()
+{
 	std::list<int>::iterator it;
     for (it = this->myList.begin(); it != this->myList.end(); ++it) {
         std::cout << *it << " ";

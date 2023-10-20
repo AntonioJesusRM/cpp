@@ -6,7 +6,7 @@
 /*   By: aruiz-mo <aruiz-mo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 09:03:14 by aruiz-mo          #+#    #+#             */
-/*   Updated: 2023/10/13 13:40:27 by aruiz-mo         ###   ########.fr       */
+/*   Updated: 2023/10/20 09:09:40 by aruiz-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,11 +86,29 @@ BitcoinExchange::BitcoinExchange(std::ifstream &fSrc, std::ifstream &fCsv)
 
 void BitcoinExchange::SearchData(std::string key, double value)
 {
-	std::map<std::string, double>::iterator it = this->dataCsv.lower_bound(key);
-	if (it != this->dataCsv.end())
-		std::cout << key << " => " << value << " = " << it->second * value << std::endl;
-    else
-        std::cout << "Error: date not found => " << key << std::endl;
+	std::time_t systemTime = std::time(NULL);
+    std::tm* localTime = std::localtime(&systemTime);
+    char systemDate[11];
+    std::strftime(systemDate, sizeof(systemDate), "%Y-%m-%d", localTime);
+
+	if (key >= systemDate)
+		std::cout << "Error: date not found => " << key << std::endl;
+	else
+	{
+		std::map<std::string, double>::iterator it = this->dataCsv.lower_bound(key);
+		if (it != this->dataCsv.begin())
+		{
+			if (it->first == key)
+				std::cout << key << " => " << value << " = " << it->second * value << std::endl;
+			else
+			{
+				it--;
+				std::cout << key << " => " << value << " = " << it->second * value << std::endl;
+			}
+		}
+		else
+			std::cout << "Error: date not found => " << key << std::endl;
+	}
 }
 
 bool BitcoinExchange::validatekey(std::string key)
